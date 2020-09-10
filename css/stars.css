@@ -1,0 +1,34 @@
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+}
+
+#form p {
+    text-align: center;
+}
+
+#form .labelStar {
+    font-size: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.labelStar {
+    color: black;
+}
+
+.clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.labelStar:hover, .labelStar:hover~.labelStar {
+    color: orange;
+}
+
+input[type="radio"]:checked~.labelStar {
+    color: orange;
+}
