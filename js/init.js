@@ -52,29 +52,56 @@ document.addEventListener("DOMContentLoaded", function (e) {
   limpioUser();
   
   // Creación de elmento div donde va el usuario
-  var usr = document.createElement("a");
+  var divUsr = document.createElement("div");
+  divUsr.classList.add('dropdown');
+
+  var buttonUser = document.createElement("button");
+  buttonUser.classList.add('btn','btn-primary','dropdown-toggle');
+  buttonUser.setAttribute("type","button");
+  buttonUser.setAttribute("id","dropdownMenuButton");
+  buttonUser.setAttribute("data-toggle","dropdown");
+  buttonUser.setAttribute("aria-haspopup","true");
+  buttonUser.setAttribute("aria-expanded","false");
+
   var contenido = document.createTextNode(contieneUsuario + ' ');
-  usr.appendChild(contenido);
+  buttonUser.appendChild(contenido);
+  
+  var divDesplegable = document.createElement("div");
+  divDesplegable.classList.add('dropdown-menu');
+  divDesplegable.setAttribute("aria-labelledby","dropdownMenuButton");
+
+  var aMenu1 = document.createElement("a");
+  aMenu1.classList.add('dropdown-item');
+  aMenu1.setAttribute("href","cart.html");
+  aMenu1.innerHTML = "Mi Carrito";
+
+  var aMenu2 = document.createElement("a");
+  aMenu2.classList.add('dropdown-item');
+  aMenu2.setAttribute("href","my-profile.html");
+  aMenu2.innerHTML = "Mi Perfil";
+
+  var aMenu3 = document.createElement("a");
+  aMenu3.classList.add('dropdown-item');
+  aMenu3.setAttribute("href","login.html");
+  aMenu3.setAttribute("id","resetearUser");
+  aMenu3.innerHTML = "Cerrar Sesión";
+  
   var insertar = document.getElementsByTagName("nav")[0].getElementsByTagName("div")[0];
-  insertar.appendChild(usr);
+  insertar.appendChild(divUsr);
 
-  // Añado las clases y estilos al nuevo div
-  usr.classList.add('btn', 'btn-primary');
-  usr.setAttribute("href", "my-profile.html");
-  usr.setAttribute("role", "button");
+  divUsr.appendChild(buttonUser);
+  divDesplegable.appendChild(aMenu1);
+  divDesplegable.appendChild(aMenu2);
+  divDesplegable.appendChild(aMenu3);
+  divUsr.appendChild(divDesplegable);
 
-  // Creo nodo script para cargar el icono de FontAwesome
-  var nuevoScript = document.createElement("script");
-  nuevoScript.setAttribute("src", "https://kit.fontawesome.com/ef7b22a168.js");
-  nuevoScript.setAttribute("crossorigin", "anonymous");
-  document.head.appendChild(nuevoScript);
-
-  // Creo nodo dentro del "a" donde va la imagen
-  var nuevoLogo = document.createElement("i");
-  nuevoLogo.setAttribute("class", "fas fa-user-circle");
-  var insertarLogo = document.getElementsByTagName("nav")[0].getElementsByTagName("div")[0].getElementsByTagName("a")[5];
-  insertarLogo.appendChild(nuevoLogo);
+  document.getElementById("resetearUser").addEventListener("click",resetUser);
 });
+
+// Funcion para cerrar sesion
+function resetUser(){
+  localStorage.removeItem("usuario");
+}
 
 // Funcion para redirigir hasta que se loge correctamente
 function login() {

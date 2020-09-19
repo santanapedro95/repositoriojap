@@ -135,7 +135,7 @@ function showListaProductos() {
             // Acá iría el filtro de busqueda
 
             htmlContenido += `    
-            <a href="product-info.html" class="list-group-item list-group-item-action">
+            <a href="product-info.html" onclick=setIdProducto(` + producto.id + `) class="list-group-item list-group-item-action lista-producto">
                 <div class="row">
                     <div class="col-3">
                         <img src="` + producto.imgSrc + `" alt="` + producto.description + `" class="img-thumbnail">
@@ -156,3 +156,4 @@ function showListaProductos() {
     }
 
 };
+

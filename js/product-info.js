@@ -171,15 +171,15 @@ function showImagesGalleryProduct(array) {
         let imageSrc = array[i];
 
         htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
-            </div>
+        <div class="carousel-item">
+            <img src="` + imageSrc + `" class="d-block w-100">
         </div>
         `
         document.getElementById("productImagesGalleryInfo").innerHTML = htmlContentToAppend;
     }
-}
+    let activo = document.getElementById("productImagesGalleryInfo").getElementsByTagName("div")[0];
+    activo.classList.add('active');
+};
 
 function enviarComentario() {
     var comentarioNew = document.getElementById("subject").value; // Comentario nuevo
@@ -193,7 +193,7 @@ function enviarComentario() {
         dateTime: fechaNew,
     });
     sortAndShowComentarios(ORDER_DESC_SCORE, objetoComentarios);
-}
+};
 
 // Definir fecha del comentario
 function hoyFecha() {
@@ -209,11 +209,12 @@ function hoyFecha() {
     mm = addZero(mm);
 
     return yyyy + '-' + mm + '-' + dd + ' ' + hour + ':' + min + ':' + sec;
-}
+};
+
 // Definir fecha del comentario
 function addZero(i) {
     if (i < 10) {
         i = '0' + i;
     }
     return i;
-}
+};
