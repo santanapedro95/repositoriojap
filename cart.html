@@ -43,14 +43,34 @@
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Carrito de compras</h2>
     </div>
-  </div>
+    
+    <div class="container" style="width: 60%;">
+      <table class="table thead-light" id="table">
+        <thead>
+          <tr>
+            <th scope="col">Imagen</th>
+            <th scope="col">Artículo</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Unitario</th>
+            <th scope="col">Subtotal (UYU)</th>
+          </tr>
+        </thead>
+        <tbody id="cantidadFilas">
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center p-4">
+      <h4>Total: </h4><span id="totalFinal"></span>
+    </div>
+
+  </main>
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -59,6 +79,7 @@
       <div></div>
     </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
