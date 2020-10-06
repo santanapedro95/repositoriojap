@@ -15,6 +15,14 @@
 .g-signin2{
   align-items: center;
 }
+/* Estilo de carrito subtitulos */
+.subtitulos{
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 /* Estilos comentarios */
 #nuevoComentario{
   color: white;

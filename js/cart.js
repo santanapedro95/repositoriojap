@@ -56,7 +56,8 @@ function total(){
     arregloSpan.each(function() {
         total += parseInt($(this).text());
     });
-    $('#totalFinal').text(total);
+    $('#totalFinal').text("UYU: " + total);
+    $('#precioFinal').text("UYU: " + total);
 }
 
 

@@ -40,14 +40,13 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
     </div>
   </nav>
   <main role="main" class="pb-5">
     <div class="text-center p-4">
       <h2>Carrito de compras</h2>
     </div>
-    
+
     <div class="container" style="width: 60%;">
       <table class="table thead-light" id="table">
         <thead>
@@ -64,9 +63,52 @@
       </table>
     </div>
 
-    <div class="text-center p-4">
-      <h4>Total: </h4><span id="totalFinal"></span>
+    <div class="container" style="width: 60%;">
+
+
+
+      <div class="card bg-secondary mb-3">
+        <div id="comentarios" class="row card-header ">
+          <div class="col">
+            <!-- Columna Izquierda -->
+            <h2 class="text-white">Costos</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <!-- Fila subtotal -->
+            <div class="col">
+              <h5 class="text-white subtitulos">Subtotal</h5>
+            </div>
+            <div class="col text-white" id="totalFinal" style="margin: 8px; text-align: right;">
+            </div>
+          </div>
+          <hr class="my-3">
+          <div class="row">
+            <!-- Fila Envio -->
+            <div class="col">
+              <h5 class="text-white subtitulos">Envio</h5>
+            </div>
+            <div class="col" id="" style="margin: 8px; text-align: right;"> Costo envio
+            </div>
+          </div>
+          <hr class="my-3">
+          <div class="row">
+            <!-- Fila TOTAL -->
+            <div class="col">
+              <h3 class="text-white subtitulos">Total</h3>
+            </div>
+            <div class="col text-white" id="precioFinal" style="margin: 8px; text-align: right; font-size: 25px;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
+
+
+
 
   </main>
 
